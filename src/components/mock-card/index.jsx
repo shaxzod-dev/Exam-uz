@@ -1,7 +1,9 @@
 import React from "react";
 import { Icons } from "../../assets/icons";
+import { bgColor } from "../../helper";
 
-const MockCard = ({ img, title, precent, color }) => {
+const MockCard = ({ img, title, percent, color }) => {
+  
   return (
     <div className="p-8 flex flex-col bg-[rgb(251,252,255)]">
       <div className="bg-primary rounded-[14px] w-[62px] h-[62px]">{img}</div>
@@ -10,9 +12,11 @@ const MockCard = ({ img, title, precent, color }) => {
       </h2>
       <div className="flex items-center gap-x-3">
         <p className="text-[rgba(0,42,84,0.75)] font-Inter text-xs font-semibold leading-[15px]">
-          {precent}
+          {percent}%
         </p>
-        <span className="w-[157px] h-2 rounded-[14px] bg-primary"></span>
+        <span
+          className={`w-[157px] h-2 rounded-[14px] bg-[${bgColor(percent)}]`}
+        ></span>
       </div>
       <div className="flex mt-8 py-4 px-6 items-center gap-x-2 border-[2px] rounded-[12px] justify-center border-[rgb(0,42,84)]">
         <button
